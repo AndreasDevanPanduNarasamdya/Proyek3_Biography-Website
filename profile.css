@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Arial';
+    color:white;
+
+}
+
+body {
+    
+    color:gray;
+
+}
+
+.header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 10%;
+    background: darkblue;
+    display:flex;
+    background: #2a2a2a;
+    justify-content:space-between;
+    align-items: center;
+    z-index:100;
+    
+}
+
+.logo{
+    font-size: 25px;
+    color:rgb(252, 252, 252);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.navbar a{
+    font-size: 18px;
+    color:rgb(252, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+
+}
+
+.navbar a:hover{
+    color:darkgray;
+}
+
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding:0 10%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.info {
+    width: 80%; /* Adjust width as needed */
+    color: #f5f4f4;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.info-item p {
+    color: #ddd; /* Light grey text */
+    margin: 0;
+}
+
+.scroll-content {
+    position: relative;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    width: 100vw;
+    height: 80vh;
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the entire area */
+    transform: translate(-50%, -50%);
+    z-index: -1; 
+}
+
+
+.home-content{
+    background-color: rgb(255, 217, 0);
+    background: transparent;
+    margin-top: 50px;
+    max-width: 1000px;
+    max-height:2500px
+    
+}
+.skills-section {
+    width: 100%;
+    padding: 50px 10%; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center;
+}
+
+.skills-border h2 {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ffffff; /* Add a separator between skills */
+}
+
+.skills-list li:last-child {
+    border-bottom: none; /* Remove the last separator */
+}
+
+.skills-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Highlight skill on hover */
+    cursor: pointer;
+}
+
+
+.home-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.home-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+.home-content h3{
+    font-size: 25px;
+    font-weight: 700;
+
+}
+
+.home-content h4{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 16px;
+    max-width: 600px;
+}
+
+.home-content .btn-box{
+    width:500px;
+    height:50px;
+    background-color: rgb(255, 0, 0);
+    column-gap: 25px;
+    font-size  :50px;
+    background: transparent;
+    
+}
+
+.picture {
+
+    width: 400px;
+    padding: 5px; /* Adds space inside the border */
+}
+.button {
+    text-align: right;
+    font-size: 140%;
+    color: white;
+    border: 3px solid white; /* Adds the white border */
+    padding: 10px 20px; /* Controls the button size */
+    display: inline-block; /* Ensures proper box sizing */
+    cursor: pointer; /* Adds a pointer cursor on hover */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+}
