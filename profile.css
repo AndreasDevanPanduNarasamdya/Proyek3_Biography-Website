@@ -4,6 +4,7 @@
     box-sizing:border-box;
     font-family: 'Arial';
     color:white;
+    overflow-x: hidden;
 
 }
 
@@ -11,6 +12,10 @@ body {
     
     color:gray;
 
+}
+
+h3 {
+    font-size: 130%;
 }
 
 .header {
@@ -65,13 +70,14 @@ body {
     width: 80%; /* Adjust width as needed */
     color: #f5f4f4;
     background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     background: transparent;
 }
 
 .info-item {
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
 .info-item h4 {
@@ -86,14 +92,15 @@ body {
 }
 
 .scroll-content {
-    position: relative;
+    position: center;
     background: black;
     color: white;
     display: flex;
     align-items: center;
     padding: 10%;
-    width: 100vw;
-    height: 80vh;
+    width: 100%;
+    height: 120vh;
+    overflow: hidden;
 }
 
 .background-video {
@@ -105,6 +112,7 @@ body {
     object-fit: cover; /* Ensures the video covers the entire area */
     transform: translate(-50%, -50%);
     z-index: -1; 
+    overflow: hidden;
 }
 
 
@@ -128,6 +136,7 @@ body {
     font-size: 36px;
     margin-bottom: 20px;
     color: #fff;
+    overflow: hidden;
 }
 
 .skills-list {
