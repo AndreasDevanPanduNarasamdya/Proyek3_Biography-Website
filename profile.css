@@ -135,7 +135,7 @@ h3 {
 /* Slides wrapper */
 .slides {
     display: flex;
-    width: 300%; /* depends on number of projects */
+    width: 400%; /* depends on number of projects */
     height: 100%;
     transition: transform 0.6s ease;
 }
@@ -147,7 +147,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 5%;
+    padding-left: 15%;
     box-sizing: border-box;
     gap: 40px;
 }
@@ -155,11 +155,10 @@ h3 {
 /* Left text */
 .slide-text {
     flex: 1;
-    max-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px; /* space between elements */
+    gap: 30px; /* space between elements */
 }
 
 .slide-text img {
@@ -181,10 +180,7 @@ h3 {
 /* Right image */
 .slide > img {
     flex: 1;
-    max-width: 55%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 /* Dots */
@@ -213,11 +209,13 @@ input[type="radio"] {
 #s1:checked ~ .slides { transform: translateX(0%); }
 #s2:checked ~ .slides { transform: translateX(-100%); }
 #s3:checked ~ .slides { transform: translateX(-200%); }
+#s4:checked ~ .slides { transform: translateX(-300%); }
 
 /* Active dot */
 #s1:checked ~ .dots label[for="s1"],
 #s2:checked ~ .dots label[for="s2"],
-#s3:checked ~ .dots label[for="s3"] {
+#s3:checked ~ .dots label[for="s3"],
+#s4:checked ~ .dots label[for="s4"] {
     background: #fff;
 }
 
@@ -227,6 +225,8 @@ input[type="radio"] {
     background: #fbbf24; /* yellow color */
     color: black;
     font-weight: bold;
+    text-align: center;
+    width: 35%;
     text-decoration: none;
     border-radius: 4px;
     transition: 0.3s; transform : 0.2s;
