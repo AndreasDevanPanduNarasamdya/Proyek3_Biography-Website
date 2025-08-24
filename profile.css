@@ -9,12 +9,11 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
-    
     color:gray;
-
+    overflow-x: hidden;
 }
 
 h3 {
@@ -34,7 +33,6 @@ h3 {
     justify-content:space-between;
     align-items: center;
     z-index:100;
-    
 }
 
 .logo{
@@ -44,7 +42,6 @@ h3 {
     font-weight: 600;
 }
 
-
 .navbar a{
     font-size: 18px;
     color:rgb(252, 255, 255);
@@ -52,11 +49,24 @@ h3 {
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
-
 }
 
 .navbar a:hover{
     color:darkgray;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
 }
 
 .home {
@@ -162,7 +172,6 @@ h3 {
     margin-top: 10%;
 }
 
-
 .scroll-content3 {
     background: black;
     color: white;
@@ -177,7 +186,7 @@ h3 {
 }
 
 .scroll-content3::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .slides {
@@ -186,6 +195,7 @@ h3 {
     height: 100%;
     transition: transform 0.6s ease;
 }
+
 .slide {
     flex: 0 0 100%;
     display: flex;
@@ -241,7 +251,7 @@ h3 {
     background: #555;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s "background";
+    transition: 0.3s background;
 }
 
 input[type="radio"] {
@@ -254,7 +264,6 @@ input[type="radio"] {
 #s4:checked ~ .slides { transform: translateX(-300%); }
 #s5:checked ~ .slides { transform: translateX(-400%); }
 
-/* Active dot */
 #s1:checked ~ .dots label[for="s1"],
 #s2:checked ~ .dots label[for="s2"],
 #s3:checked ~ .dots label[for="s3"],
@@ -286,11 +295,11 @@ input[type="radio"] {
 }
 
 .footer {
-    background: #4f4f4f;       /* dark background */
-    color: black;            /* white text */
+    background: #4f4f4f;
+    color: black;
     text-align: center;
     padding: 15px;
-    position: relative;     /* stays at bottom after content */
+    position: relative;
     bottom: 0;
     width: 100%;
     font-size: px;
@@ -312,21 +321,20 @@ input[type="radio"] {
     left: 50%;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Ensures the video covers the entire area */
+    object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1; 
     overflow: hidden;
 }
-
 
 .home-content{
     background-color: rgb(255, 217, 0);
     background: transparent;
     margin-top: 50px;
     max-width: 1000px;
-    max-height:2500px
-    
+    max-height: 2500px;
 }
+
 .skills-section {
     width: 100%;
     padding: 50px 10%;
@@ -352,18 +360,17 @@ input[type="radio"] {
 .skills-list li {
     margin-bottom: 10px;
     padding: 5px;
-    border-bottom: 1px solid #ffffff; /* Add a separator between skills */
+    border-bottom: 1px solid #ffffff;
 }
 
 .skills-list li:last-child {
-    border-bottom: none; /* Remove the last separator */
+    border-bottom: none;
 }
 
 .skills-list li:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Highlight skill on hover */
+    background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
-
 
 .home-content h1 {
     font-size: 40px;
@@ -375,10 +382,10 @@ input[type="radio"] {
     font-weight: 700;
     color: rgb(255, 255, 255);
 }
+
 .home-content h3{
     font-size: 25px;
     font-weight: 700;
-
 }
 
 .home-content h4{
@@ -396,23 +403,299 @@ input[type="radio"] {
     height:50px;
     background-color: rgb(255, 0, 0);
     column-gap: 25px;
-    font-size  :50px;
+    font-size: 50px;
     background: transparent;
-    
 }
 
 .picture {
-
     width: 400px;
-    padding: 5px; /* Adds space inside the border */
+    padding: 5px;
 }
+
 .button {
     text-align: right;
     font-size: 140%;
     color: white;
-    border: 3px solid white; /* Adds the white border */
-    padding: 10px 20px; /* Controls the button size */
-    display: inline-block; /* Ensures proper box sizing */
-    cursor: pointer; /* Adds a pointer cursor on hover */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+    border: 3px solid white;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #2a2a2a;
+        flex-direction: column;
+        padding: 20px;
+        transition: 0.3s;
+        border-top: 1px solid #444;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin: 10px 0;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .home {
+        padding: 80px 5% 0;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .home-content {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .skills-border h2 {
+        font-size: 28px;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h2 {
+        font-size: 24px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .scroll-content {
+        padding: 5%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .school {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .school-text {
+        max-width: 100%;
+    }
+
+    .school-img img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0;
+    }
+
+    .scroll-content2 {
+        padding: 5%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .experience {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .experience-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .experience-img img {
+        width: 80px;
+        margin-top: 0;
+    }
+
+    .scroll-content3 {
+        height: auto;
+        min-height: 80vh;
+        padding: 20px 0;
+    }
+
+    .slides {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        position: static;
+    }
+
+    .slide {
+        flex: none;
+        width: 100%;
+        padding: 20px 5%;
+        flex-direction: column;
+        text-align: center;
+        min-height: 60vh;
+        justify-content: center;
+    }
+
+    .slide-text {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .slide-text img {
+        width: 120px;
+    }
+
+    .slide-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .slide-text p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .slide > img {
+        height: 200px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .btn-yellow {
+        width: auto;
+        min-width: 180px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .dots {
+        display: none;
+    }
+
+    #s1:checked ~ .slides,
+    #s2:checked ~ .slides,
+    #s3:checked ~ .slides,
+    #s4:checked ~ .slides,
+    #s5:checked ~ .slides {
+        transform: translateX(0);
+    }
+
+    .footer {
+        padding: 20px 5%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 5%;
+        height: 60px;
+    }
+
+    .navbar {
+        top: 60px;
+    }
+
+    .home {
+        padding: 70px 5% 0;
+    }
+
+    .skills-border h2 {
+        font-size: 24px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content h2 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 13px;
+    }
+
+    .info-item h3 {
+        font-size: 14px;
+    }
+
+    .slide {
+        min-height: 50vh;
+        padding: 15px 5%;
+    }
+
+    .slide-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .slide-text p {
+        font-size: 0.9rem;
+    }
+
+    .btn-yellow {
+        min-width: 150px;
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .home {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 5% 20px;
+    }
+
+    .slide {
+        min-height: 40vh;
+    }
+
+    .scroll-content3 {
+        min-height: 60vh;
+    }
 }
