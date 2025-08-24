@@ -147,7 +147,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 15%;
+    width: 120px;
+    padding-left: 5%;
     box-sizing: border-box;
     gap: 40px;
 }
@@ -179,8 +180,8 @@ h3 {
 
 /* Right image */
 .slide > img {
-    flex: 1;
     height: 100%;
+    width: auto;
 }
 
 /* Dots */
@@ -226,7 +227,7 @@ input[type="radio"] {
     color: black;
     font-weight: bold;
     text-align: center;
-    width: 35%;
+    width: 40%;
     text-decoration: none;
     border-radius: 4px;
     transition: 0.3s; transform : 0.2s;
