@@ -4,9 +4,12 @@
     box-sizing:border-box;
     font-family: 'Arial';
     color:white;
-    overflow-x: hidden;
 
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
     
@@ -67,9 +70,10 @@ h3 {
 }
 
 .info {
-    width: 80%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     color: #f5f4f4;
     background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    margin-top: 50px;
     padding: 40px;
     border-radius: 10px;
     background: transparent;
@@ -99,13 +103,168 @@ h3 {
     align-items: center;
     padding: 10%;
     width: 100%;
-    height: 120vh;
+    height: 170vh;
     overflow: hidden;
+}
+
+.scroll-content2 {
+    position: center;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.scroll-content3 {
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+/* Slides wrapper */
+.slides {
+    display: flex;
+    width: 300%; /* depends on number of projects */
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+/* Each project panel */
+/* Each project panel */
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+/* Left text */
+.slide-text {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* space between elements */
+}
+
+.slide-text img {
+    width: 180px;
+    height: auto;
+}
+
+.slide-text h2 {
+    font-size: 2rem;
+    color: white;
+}
+
+.slide-text p {
+    font-size: 1.2rem;
+    color: #b8b8b8;
+    line-height: 1.6;
+}
+
+/* Right image */
+.slide > img {
+    flex: 1;
+    max-width: 55%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dots label {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s "background";
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#s1:checked ~ .slides { transform: translateX(0%); }
+#s2:checked ~ .slides { transform: translateX(-100%); }
+#s3:checked ~ .slides { transform: translateX(-200%); }
+
+/* Active dot */
+#s1:checked ~ .dots label[for="s1"],
+#s2:checked ~ .dots label[for="s2"],
+#s3:checked ~ .dots label[for="s3"] {
+    background: #fff;
+}
+
+.btn-yellow {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fbbf24; /* yellow color */
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s; transform : 0.2s;
+}
+
+.btn-yellow:hover {
+    background: #facc15; /* lighter yellow */
+    transform: translateY(-2px);
+}
+
+.btn-yellow:active {
+    transform: translateY(0);
+}
+
+.footer {
+    background: darkgray;       /* dark background */
+    color: black;            /* white text */
+    text-align: center;
+    padding: 15px;
+    position: relative;     /* stays at bottom after content */
+    bottom: 0;
+    width: 100%;
+    font-size: px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    color: #fff; /* brighter when hovered */
 }
 
 .background-video {
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     width: 100vw;
     height: 100vh;
@@ -126,13 +285,12 @@ h3 {
 }
 .skills-section {
     width: 100%;
-    padding: 50px 10%; /* Adjust padding as needed */
+    padding: 50px 10%;
     display: flex;
     justify-content: center;
 }
 
 .skills-border h2 {
-    text-align: left;
     font-size: 36px;
     margin-bottom: 20px;
     color: #fff;
@@ -142,6 +300,7 @@ h3 {
 .skills-list {
     list-style-type: none;
     padding-left: 0;
+    padding-right: 0;
     font-size: 18px;
     color: #ddd;
 }
